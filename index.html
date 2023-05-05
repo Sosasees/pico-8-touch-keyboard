@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+
+  <head>
+    <meta charset='UTF-8'>
+    <title>pico-8 keyboard</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+
+  <body class='main-layout'>
+    
+    <div class='screen-container'>
+      <img class='screen'
+      src='placeholder-screen.webp' alt='128×128px size test image'
+      style='image-rendering: pixelated'>
+    </div>
+        
+    <div class='keyboard-container'>
+      
+      <div class='js-keyboard--normal'>
+        <div class='keyboard__row keyboard__row--no-background keyboard__row--align-right'>
+          <button disabled class='key key--tab-button key--tab-button--keyboard--active'>
+            switch to keyboard
+          </button>
+          <button class='key key--tab-button key--tab-button--controller--inactive js-tab-button--controller'>
+            switch to controller
+          </button>
+          <button class='key key--26dp-wide key--margin-left key--escape js-key--escape'>
+            escape
+          </button>
+        </div>
+        <div class='keyboard__row keyboard__row--offset-left'>
+          <button class='key key--two-symbols key--grave-accent js-key--grave-accent'>
+            `
+          </button>
+          <button class='key key--two-symbols key--1 js-key--1'>
+            1
+          </button>
+          <button class='key key--two-symbols key--2 js-key--2'>
+            2
+          </button>
+          <button class='key key--two-symbols key--3 js-key--3'>
+            3
+          </button>
+          <button class='key key--two-symbols key--4 js-key--4'>
+            4
+          </button>
+          <button class='key key--two-symbols key--5 js-key--5'>
+            5
+          </button>
+          <button class='key key--two-symbols key--6 js-key--6'>
+            6
+          </button>
+          <button class='key key--two-symbols key--7 js-key--7'>
+            7
+          </button>
+          <button class='key key--two-symbols key--8 js-key--8'>
+            8
+          </button>
+          <button class='key key--two-symbols key--9 js-key--9'>
+            9
+          </button>
+          <button class='key key--two-symbols key--0 js-key--0'>
+            0
+          </button>
+          <button class='key key--two-symbols key--minus js-key--minus'>
+            -
+          </button>
+          <button class='key key--two-symbols key--plus js-key--plus'>
+            +
+          </button>
+        </div>
+        <div class='keyboard__row keyboard__row--offset-right'>
+          <button class='key key--q js-key--q'>
+            Q
+          </button>
+          <button class='key key--w js-key--w'>
+            W
+          </button>
+          <button class='key key--e js-key--e'>
+            E
+          </button>
+          <button class='key key--r js-key--r'>
+            R
+          </button>
+          <button class='key key--t js-key--t'>
+            T
+          </button>
+          <button class='key key--y js-key--y'>
+            Y
+          </button>
+          <button class='key key--u js-key--u'>
+            U
+          </button>
+          <button class='key key--i js-key--i'>
+            I
+          </button>
+          <button class='key key--o js-key--o'>
+            O
+          </button>
+          <button class='key key--p js-key--p'>
+            P
+          </button>
+          <button class='key key--two-symbols key--angle-bracket-left js-key--angle-bracket-left'>
+            [
+          </button>
+          <button class='key key--two-symbols key--angle-bracket-right js-key--angle-bracket-right'>
+            ]
+          </button>
+          <button class='key key--two-symbols key--backslash js-key--backslash'>
+            \
+          </button>
+        </div>
+        <div class='keyboard__row'>
+          <button class='key key--19dp-wide key--tab js-key--tab'>
+            tab
+          </button>
+          <button class='key key--a js-key--a'>
+            A
+          </button>
+          <button class='key key--s js-key--s'>
+            S
+          </button>
+          <button class='key key--d js-key--d'>
+            D
+          </button>
+          <button class='key key--f js-key--f'>
+            F
+          </button>
+          <button class='key key--g js-key--g'>
+            G
+          </button>
+          <button class='key key--h js-key--h'>
+            H
+          </button>
+          <button class='key key--j js-key--j'>
+            J
+          </button>
+          <button class='key key--k js-key--k'>
+            K
+          </button>
+          <button class='key key--l js-key--l'>
+            L
+          </button>
+          <button class='key key--two-symbols key--semicolon js-key--semicolon'>
+            ;
+          </button>
+          <button class='key key--two-symbols key--quote js-key--quote'>
+            '
+          </button>
+          <button class='key key--19dp-wide key--backspace js-key--backspace'>
+            backspace
+          </button>
+        </div>
+        <div class='keyboard__row'>
+          <button class='key key--26dp-wide key--shift js-key--shift'>
+            shift
+          </button>
+          <button class='key key--z js-key--z'>
+            Z
+          </button>
+          <button class='key key--x js-key--x'>
+            X
+          </button>
+          <button class='key key--c js-key--c'>
+            C
+          </button>
+          <button class='key key--v js-key--v'>
+            V
+          </button>
+          <button class='key key--b js-key--b'>
+            B
+          </button>
+          <button class='key key--n js-key--n'>
+            N
+          </button>
+          <button class='key key--m js-key--m'>
+            M
+          </button>
+          <button class='key key--two-symbols key--comma js-key--comma'>
+            ,
+          </button>
+          <button class='key key--two-symbols key--period js-key--period'>
+            .
+          </button>
+          <button class='key key--two-symbols key--slash js-key--slash'>
+            /
+          </button>
+          <button class='key key--26dp-wide key--enter js-key--enter'>
+            enter
+          </button>
+        </div>
+        <div class='keyboard__row'>
+          <button class='key key--26dp-wide key--control js-key--control'>
+            control
+          </button>
+          <button class='key key--extra-wide key--space js-key--space'>
+            space
+          </button>
+          <button class='key key--arrow-left js-key--arrow-left'>
+            ←
+          </button>
+          <button class='key key--arrow-right js-key--arrow-right'>
+            →
+          </button>
+          <button class='key key--arrow-up js-key--arrow-up'>
+            ↓
+          </button>
+          <button class='key key--arrow-down js-key--arrow-down'>
+            ↑
+          </button>
+        </div>
+      </div>
+      
+      <div class='js-keyboard--glyphs'>
+        <div class='keyboard__row keyboard__row--no-background keyboard__row--align-right'>
+          <button disabled class='key key--tab-button key--tab-button--keyboard--active'>
+            switch to keyboard
+          </button>
+          <button class='key key--tab-button key--tab-button--controller--inactive js-tab-button--controller'>
+            switch to controller
+          </button>
+          <button class='key key--26dp-wide key--margin-left key--escape js-key--escape'>
+            escape
+          </button> 
+        </div>
+        <div class='keyboard__row keyboard__row--offset-left'>
+          <button class='key key--two-symbols--shift key--grave-accent js-key--tilde'>
+            ~
+          </button>
+          <button class='key key--two-symbols--shift key--1 js-key--exclaimation'>
+            !
+          </button>
+          <button class='key key--two-symbols--shift key--2 js-key--at'>
+            @
+          </button>
+          <button class='key key--two-symbols--shift key--3 js-key--hash'>
+            #
+          </button>
+          <button class='key key--two-symbols--shift key--4 js-key--dollar'>
+            $
+          </button>
+          <button class='key key--two-symbols--shift key--5 js-key--percent'>
+            %
+          </button>
+          <button class='key key--two-symbols--shift key--6 js-key--circumfley'>
+            ^
+          </button>
+          <button class='key key--two-symbols--shift key--7 js-key--and'>
+            &
+          </button>
+          <button class='key key--two-symbols--shift key--8 js-key--asterisk'>
+            *
+          </button>
+          <button class='key key--two-symbols--shift key--9 js-key--bracket-left'>
+            (
+          </button>
+          <button class='key key--two-symbols--shift key--0 js-key--bracket-right'>
+            )
+          </button>
+          <button class='key key--two-symbols--shift key--minus js-key--underscore'>
+            _
+          </button>
+          <button class='key key--two-symbols--shift key--plus js-key--equals'>
+            =
+          </button>
+        </div>
+        <div class='keyboard__row keyboard__row--offset-right'>
+          <button class='key key--ellipsis js-key--ellipsis'>
+            …
+          </button>
+          <button class='key key--sawtooth js-key--sawtooth'>
+            ∧
+          </button>
+          <button class='key key--dot-pattern js-key--dot-pattern'>
+            ░
+          </button>
+          <button class='key key--button_right js-key--button_right'>
+            ➡️
+          </button>
+          <button class='key key--hourglass js-key--hourglass'>
+            ⧗
+          </button>
+          <button class='key key--lines_horizontal js-key--lines_horizontal'>
+            ▤
+          </button>
+          <button class='key key--button_up js-key--button_up'>
+            ⬆️
+          </button>
+          <button class='key key--eye js-key--eye'>
+            ☉
+          </button>
+          <button class='key key--button_circle js-key--button_circle'>
+            🅾️
+          </button>
+          <button class='key key--diamond js-key--diamond'>
+            ◆
+          </button>
+          <button class='key key--two-symbols--shift key--angle-bracket-left js-key--curly-bracket-left'>
+            }
+          </button>
+          <button class='key key--two-symbols--shift key--angle-bracket-right js-key--curly-bracket-right'>
+            }
+          </button>
+          <button class='key key--two-symbols--shift key--backslash js-key--vertical-bar'>
+            |
+          </button>
+        </div>
+        <div class='keyboard__row'>
+          <button class='key key--19dp-wide key--tab js-key--tab'>
+            tab
+          </button>
+          <button class='key key--rectangle js-key--rectangle'>
+            █
+          </button>
+          <button class='key key--star js-key--star'>
+            ★
+          </button>
+          <button class='key key--button_down js-key--button_down'>
+            ⬇️
+          </button>
+          <button class='key key--throwing-star js-key--throwing-star'>
+            ✽
+          </button>
+          <button class='key key--ball js-key--ball'>
+            ●
+          </button>
+          <button class='key key--heart js-key--heart'>
+            ♥
+          </button>
+          <button class='key key--humanoid js-key--humanoid'>
+            웃
+          </button>
+          <button class='key key--house js-key--house'>
+            ⌂
+          </button>
+          <button class='key key--button_left js-key--button_left'>
+            ⬅️
+          </button>
+          <button class='key key--two-symbols--shift key--semicolon js-key--colon'>
+            ;
+          </button>
+          <button class='key key--two-symbols--shift key--quote js-key--quotes'>
+            '
+          </button>
+          <button class='key key--19dp-wide key--backspace js-key--backspace'>
+            backspace
+          </button>
+        </div>
+        <div class='keyboard__row'>
+          <button class='key key--toggled key--26dp-wide key--shift js-key--shift'>
+            shift
+          </button>
+          <button class='key key--lines_vertical js-key--lines_vertical'>
+            ▥
+          </button>
+          <button class='key key--button_cross js-key--button_cross'>
+            ❎
+          </button>
+          <button class='key key--cat js-key--cat'>
+            🐱
+          </button>
+          <button class='key key--birds js-key--birds'>
+            ˇ
+          </button>
+          <button class='key key--checkerboard js-key--checkerboard'>
+            ▒
+          </button>
+          <button class='key key--music-note js-key--music-note'>
+            ♪
+          </button>
+          <button class='key key--face js-key--face'>
+            😐
+          </button>
+          <button class='key key--two-symbols--shift key--comma js-key--lesser-than'>
+            &lt;
+          </button>
+          <button class='key key--two-symbols--shift key--period js-key--greater-than'>
+            &gt;
+          </button>
+          <button class='key key--two-symbols--shift key--slash js-key--question'>
+            ?
+          </button>
+          <button class='key key--26dp-wide key--enter js-key--enter'>
+            enter
+          </button>
+        </div>
+        <div class='keyboard__row'>
+          <button class='key key--26dp-wide key--control js-key--control'>
+            control
+          </button>
+          <button class='key key--extra-wide key--space js-key--space'>
+            space
+          </button>
+          <button class='key key--arrow-left js-key--arrow-left'>
+            ←
+          </button>
+          <button class='key key--arrow-right js-key--arrow-right'>
+            →
+          </button>
+          <button class='key key--arrow-up js-key--arrow-up'>
+            ↓
+          </button>
+          <button class='key key--arrow-down js-key--arrow-down'>
+            ↑
+          </button>
+        </div>
+      </div>
+      
+      <div class='js-keyboard--puny'>
+        <div class='keyboard__row keyboard__row--no-background keyboard__row--align-right'>
+          <button disabled class='key key--tab-button key--tab-button--keyboard--active'>
+            switch to keyboard
+          </button>
+          <button class='key key--tab-button key--tab-button--controller--inactive js-tab-button--controller'>
+            switch to controller
+          </button>
+          <button class='key key--26dp-wide key--margin-left key--escape js-key--escape'>
+            escape
+          </button>
+        </div>
+        <div class='keyboard__row keyboard__row--offset-left'>
+          <button class='key key--two-symbols key--grave-accent js-key--grave-accent'>
+            `
+          </button>
+          <button class='key key--two-symbols key--1 js-key--1'>
+            1
+          </button>
+          <button class='key key--two-symbols key--2 js-key--2'>
+            2
+          </button>
+          <button class='key key--two-symbols key--3 js-key--3'>
+            3
+          </button>
+          <button class='key key--two-symbols key--4 js-key--4'>
+            4
+          </button>
+          <button class='key key--two-symbols key--5 js-key--5'>
+            5
+          </button>
+          <button class='key key--two-symbols key--6 js-key--6'>
+            6
+          </button>
+          <button class='key key--two-symbols key--7 js-key--7'>
+            7
+          </button>
+          <button class='key key--two-symbols key--8 js-key--8'>
+            8
+          </button>
+          <button class='key key--two-symbols key--9 js-key--9'>
+            9
+          </button>
+          <button class='key key--two-symbols key--0 js-key--0'>
+            0
+          </button>
+          <button class='key key--two-symbols key--minus js-key--minus'>
+            -
+          </button>
+          <button class='key key--two-symbols key--plus js-key--plus'>
+            +
+          </button>
+        </div>
+        <div class='keyboard__row keyboard__row--offset-right'>
+          <button class='key key--q--puny js-key--q'>
+            q
+          </button>
+          <button class='key key--w--puny js-key--w--puny'>
+            w
+          </button>
+          <button class='key key--e--puny js-key--e--puny'>
+            e
+          </button>
+          <button class='key key--r--puny js-key--r--puny'>
+            r
+          </button>
+          <button class='key key--t--puny js-key--t--puny'>
+            t
+          </button>
+          <button class='key key--y--puny js-key--y--puny'>
+            y
+          </button>
+          <button class='key key--u--puny js-key--u--puny'>
+            u
+          </button>
+          <button class='key key--i--puny js-key--i--puny'>
+            i
+          </button>
+          <button class='key key--o--puny js-key--o--puny'>
+            o
+          </button>
+          <button class='key key--toggled key--p--puny js-key--p--puny'>
+            p
+          </button>
+          <button class='key key--two-symbols key--angle-bracket-left js-key--angle-bracket-left'>
+            [
+          </button>
+          <button class='key key--two-symbols key--angle-bracket-right js-key--angle-bracket-right'>
+            ]
+          </button>
+          <button class='key key--two-symbols key--backslash js-key--backslash'>
+            \
+          </button>
+        </div>
+        <div class='keyboard__row'>
+          <button class='key key--19dp-wide key--tab js-key--tab'>
+            tab
+          </button>
+          <button class='key key--a--puny js-key--a--puny'>
+            a
+          </button>
+          <button class='key key--s--puny js-key--s--puny'>
+            s
+          </button>
+          <button class='key key--d--puny js-key--d--puny'>
+            d
+          </button>
+          <button class='key key--f--puny js-key--f--puny'>
+            f
+          </button>
+          <button class='key key--g--puny js-key--g--puny'>
+            g
+          </button>
+          <button class='key key--h--puny js-key--h--puny'>
+            h
+          </button>
+          <button class='key key--j--puny js-key--j--puny'>
+            j
+          </button>
+          <button class='key key--k--puny js-key--k--puny'>
+            k
+          </button>
+          <button class='key key--l--puny js-key--l--puny'>
+            l
+          </button>
+          <button class='key key--two-symbols key--semicolon js-key--semicolon'>
+            ;
+          </button>
+          <button class='key key--two-symbols key--quote js-key--quote'>
+            '
+          </button>
+          <button class='key key--19dp-wide key--backspace js-key--backspace'>
+            backspace
+          </button>
+        </div>
+        <div class='keyboard__row'>
+          <button class='key key--26dp-wide key--shift js-key--shift'>
+            shift
+          </button>
+          <button class='key key--z--puny js-key--z--puny'>
+            z
+          </button>
+          <button class='key key--x--puny js-key--x--puny'>
+            x
+          </button>
+          <button class='key key--c--puny js-key--c--puny'>
+            c
+          </button>
+          <button class='key key--v--puny js-key--v--puny'>
+            v
+          </button>
+          <button class='key key--b--puny js-key--b--puny'>
+            b
+          </button>
+          <button class='key key--n--puny js-key--n--puny'>
+            n
+          </button>
+          <button class='key key--m--puny js-key--m--puny'>
+            m
+          </button>
+          <button class='key key--two-symbols key--comma js-key--comma'>
+            ,
+          </button>
+          <button class='key key--two-symbols key--period js-key--period'>
+            .
+          </button>
+          <button class='key key--two-symbols key--slash js-key--slash'>
+            /
+          </button>
+          <button class='key key--26dp-wide key--enter js-key--enter'>
+            enter
+          </button>
+        </div>
+        <div class='keyboard__row'>
+          <button class='key key--26dp-wide key--control js-key--control'>
+            control
+          </button>
+          <button class='key key--extra-wide key--space js-key--space'>
+            space
+          </button>
+          <button class='key key--arrow-left js-key--arrow-left'>
+            ←
+          </button>
+          <button class='key key--arrow-right js-key--arrow-right'>
+            →
+          </button>
+          <button class='key key--arrow-up js-key--arrow-up'>
+            ↓
+          </button>
+          <button class='key key--arrow-down js-key--arrow-down'>
+            ↑
+          </button>
+        </div>
+      </div>
+      
+      <div class='js-keyboard--puny--shift'>
+        <div class='keyboard__row keyboard__row--no-background keyboard__row--align-right'>
+          <button disabled class='key key--tab-button key--tab-button--keyboard--active'>
+            switch to keyboard
+          </button>
+          <button class='key key--tab-button key--tab-button--controller--inactive js-tab-button--controller'>
+            switch to controller
+          </button>
+          <button class='key key--26dp-wide key--margin-left key--escape js-key--escape'>
+            escape
+          </button>
+        </div>
+        <div class='keyboard__row keyboard__row--offset-left'>
+          <button class='key key--two-symbols--shift key--grave-accent js-key--tilde'>
+            ~
+          </button>
+          <button class='key key--two-symbols--shift key--1 js-key--exclaimation'>
+            !
+          </button>
+          <button class='key key--two-symbols--shift key--2 js-key--at'>
+            @
+          </button>
+          <button class='key key--two-symbols--shift key--3 js-key--hash'>
+            #
+          </button>
+          <button class='key key--two-symbols--shift key--4 js-key--dollar'>
+            $
+          </button>
+          <button class='key key--two-symbols--shift key--5 js-key--percent'>
+            %
+          </button>
+          <button class='key key--two-symbols--shift key--6 js-key--circumfley'>
+            ^
+          </button>
+          <button class='key key--two-symbols--shift key--7 js-key--and'>
+            &
+          </button>
+          <button class='key key--two-symbols--shift key--8 js-key--asterisk'>
+            *
+          </button>
+          <button class='key key--two-symbols--shift key--9 js-key--bracket-left'>
+            (
+          </button>
+          <button class='key key--two-symbols--shift key--0 js-key--bracket-right'>
+            )
+          </button>
+          <button class='key key--two-symbols--shift key--minus js-key--underscore'>
+            _
+          </button>
+          <button class='key key--two-symbols--shift key--plus js-key--equals'>
+            =
+          </button>
+        </div>
+        <div class='keyboard__row keyboard__row--offset-right'>
+          <button class='key key--q js-key--q'>
+            Q
+          </button>
+          <button class='key key--w js-key--w'>
+            W
+          </button>
+          <button class='key key--e js-key--e'>
+            E
+          </button>
+          <button class='key key--r js-key--r'>
+            R
+          </button>
+          <button class='key key--t js-key--t'>
+            T
+          </button>
+          <button class='key key--y js-key--y'>
+            Y
+          </button>
+          <button class='key key--u js-key--u'>
+            U
+          </button>
+          <button class='key key--i js-key--i'>
+            I
+          </button>
+          <button class='key key--o js-key--o'>
+            O
+          </button>
+          <button class='key key--toggled key--p js-key--p'>
+            P
+          </button>
+          <button class='key key--two-symbols--shift key--angle-bracket-left js-key--curly-bracket-left'>
+            }
+          </button>
+          <button class='key key--two-symbols--shift key--angle-bracket-right js-key--curly-bracket-right'>
+            }
+          </button>
+          <button class='key key--two-symbols--shift key--backslash js-key--vertical-bar'>
+            |
+          </button>
+        </div>
+        <div class='keyboard__row'>
+          <button class='key key--19dp-wide key--tab js-key--tab'>
+            tab
+          </button>
+          <button class='key key--a js-key--a'>
+            A
+          </button>
+          <button class='key key--s js-key--s'>
+            S
+          </button>
+          <button class='key key--d js-key--d'>
+            D
+          </button>
+          <button class='key key--f js-key--f'>
+            F
+          </button>
+          <button class='key key--g js-key--g'>
+            G
+          </button>
+          <button class='key key--h js-key--h'>
+            H
+          </button>
+          <button class='key key--j js-key--j'>
+            J
+          </button>
+          <button class='key key--k js-key--k'>
+            K
+          </button>
+          <button class='key key--l js-key--l'>
+            L
+          </button>
+          <button class='key key--two-symbols--shift key--semicolon js-key--semicolon'>
+            ;
+          </button>
+          <button class='key key--two-symbols--shift key--quote js-key--quote'>
+            '
+          </button>
+          <button class='key key--19dp-wide key--backspace js-key--backspace'>
+            backspace
+          </button>
+        </div>
+        <div class='keyboard__row'>
+          <button class='key key--toggled key--26dp-wide key--shift js-key--shift'>
+            shift
+          </button>
+          <button class='key key--z js-key--z'>
+            Z
+          </button>
+          <button class='key key--x js-key--x'>
+            X
+          </button>
+          <button class='key key--c js-key--c'>
+            C
+          </button>
+          <button class='key key--v js-key--v'>
+            V
+          </button>
+          <button class='key key--b js-key--b'>
+            B
+          </button>
+          <button class='key key--n js-key--n'>
+            N
+          </button>
+          <button class='key key--m js-key--m'>
+            M
+          </button>
+          <button class='key key--two-symbols--shift key--comma js-key--lesser-than'>
+            &lt;
+          </button>
+          <button class='key key--two-symbols--shift key--period js-key--greater-than'>
+            &gt;
+          </button>
+          <button class='key key--two-symbols--shift key--slash js-key--question'>
+            ?
+          </button>
+          <button class='key key--26dp-wide key--enter js-key--enter'>
+            enter
+          </button>
+        </div>
+        <div class='keyboard__row'>
+          <button class='key key--26dp-wide key--control js-key--control'>
+            control
+          </button>
+          <button class='key key--extra-wide key--space js-key--space'>
+            space
+          </button>
+          <button class='key key--arrow-left js-key--arrow-left'>
+            ←
+          </button>
+          <button class='key key--arrow-right js-key--arrow-right'>
+            →
+          </button>
+          <button class='key key--arrow-up js-key--arrow-up'>
+            ↓
+          </button>
+          <button class='key key--arrow-down js-key--arrow-down'>
+            ↑
+          </button>
+        </div>
+      </div>
+      
+      <div class='js-keyboard--controller'>
+        <div class='keyboard__row keyboard__row--align-right-extreme'>
+          <button class='key key--tab-button key--tab-button--keyboard--inactive js-tab-button--keyboard'>
+            switch to keyboard
+          </button>
+          <button disabled class='key key--tab-button key--tab-button--controller--active'>
+            switch to controller
+          </button>
+          <button class='key key--26dp-wide key--margin-left key--escape js-key--escape'>
+            escape
+          </button>
+        </div>
+        <div class='keyboard__controller'>
+          <div class='controller__dpad'>
+            <button class='key key--controller-dpad js-controller-button--top-left'>
+              ↖
+            </button>
+            <button class='key key--controller-dpad key--controller-dpad--up js-controller-button--up'>
+              ↑
+            </button>
+            <button class='key key--controller-dpad js-controller-button--top-right'>
+              ↗
+            </button>
+            <button class='key key--controller-dpad key--controller-dpad--left js-controller-button--left'>
+              ←
+            </button>
+            <div class='key key--controller-dpad key--controller-dpad--center'></div>
+            <button class='key key--controller-dpad key--controller-dpad--right js-controller-button--right'>
+              →
+            </button>
+            <button class='key key--controller-dpad js-controller-button--bottom-left'>
+              ↙
+            </button>
+            <button class='key key--controller-dpad key--controller-dpad--down js-controller-button--down'>
+              ↓
+            </button>
+            <button class='key key--controller-dpad js-controller-button--bottom-right'>
+              ↘
+            </button>
+          </div>
+          <div class='controller__buttons'>
+            <button class='key key--controller-button key--controller-button--circle-and-cross js-controller-button--circle-and-cross'></button>
+            <button class='key key--controller-button key--controller-button--circle js-controller-button--circle'>
+              🅾️
+            </button>
+            <button class='key key--controller-button key--controller-button--cross js-controller-button--cross'>
+              ❎
+            </button>
+            <button class='key key--controller-button key--controller-button--circle-and-cross js-controller-button--circle-and-cross'></button>
+          </div>
+        </div>
+      </div>
+        
+    </div>
+
+    <!-- <script src="index.js"></script> -->
+  </body>
+
+
+</html>
